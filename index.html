@@ -11,6 +11,7 @@
       font-weight: 700;
       font-style: normal;
     }
+
     @font-face {
       font-family: 'ChosunGu';
       src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
@@ -39,6 +40,10 @@
       font-family: 'YClover-Bold', sans-serif;
     }
 
+    header p {
+      white-space: nowrap;
+    }
+
     section {
       max-width: 800px;
       margin: auto;
@@ -60,6 +65,11 @@
 
     .poster-subsection h3 {
       font-family: 'YClover-Bold', sans-serif;
+    }
+
+    .poster-subsection a {
+      color: #00a859;
+      text-decoration: underline;
     }
 
     .cta {
@@ -118,16 +128,57 @@
       font-family: 'YClover-Bold', sans-serif;
     }
 
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      padding: 2rem;
-      color: #555;
+    /* ✅ 네비게이션 버튼 */
+    .floating-nav {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
     }
 
-    footer a {
-      color: #007acc;
-      text-decoration: underline;
+    .floating-button {
+      width: 60px;
+      height: 60px;
+      background-color: #ffe17a;
+      color: white;
+      font-size: 30px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    .floating-options {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .floating-options a {
+      background: #ffe17a;
+      color: white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 24px;
+    }
+
+    .floating-options a img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .floating-nav.active .floating-options {
+      display: flex;
     }
   </style>
 </head>
@@ -145,15 +196,15 @@
     <p><strong>집결:</strong> 서울역 14번 출구 앞 <strong>오전 9시까지</strong></p>
     <p><strong>참가비:</strong> 3만원 (버스+숙소 포함)</p>
     <p><strong>신청 마감:</strong> 5월 31일 (토)</p>
-    <p><strong>후원:</strong> 카카오뱅크 3333-34-0943758 (주호즈)</p>
-    <p>※ 행사 후 남은 금액은 <strong class="highlight">투쟁장에 기부됩니다</strong></p>
+    <p><strong>후원:</strong> 카카오뱅크 3333-34-0943758 (ㅈㅎㅈ)</p>
+    <p>※ 행사 후 남은 금액은 <strong class="highlight">투쟁사업장에 기부됩니다</strong></p>
   </div>
 
   <div class="poster-subsection">
-    <h3>🔍 이런 게 궁금하다면?</h3>
-    <p><a href="https://husky-cloak-daa.notion.site/196da37d5ce1806ab83dd8037bb014dc">✊ 서면시장번영회지회 투쟁이 궁금하다면?</a></p>
-    <p><a href="https://husky-cloak-daa.notion.site/19fda37d5ce18018a06cff1295a72a0d">🔥 이수기업 투쟁이 궁금하다면?</a></p>
-    <p><a href="https://husky-cloak-daa.notion.site/ENG-19bda37d5ce180bdbba4cefb4c696b89">🍀 서진 ENG 투쟁이 궁금하다면?</a></p>
+    <h3>🔍 투쟁현장이 궁금하다면?</h3>
+    <p><a href="https://husky-cloak-daa.notion.site/196da37d5ce1806ab83dd8037bb014dc" target="_blank">✊ 서면시장번영회지회 투쟁이 궁금하다면?</a></p>
+    <p><a href="https://husky-cloak-daa.notion.site/19fda37d5ce18018a06cff1295a72a0d" target="_blank">🔥 이수기업 투쟁이 궁금하다면?</a></p>
+    <p><a href="https://husky-cloak-daa.notion.site/ENG-19bda37d5ce180bdbba4cefb4c696b89" target="_blank">🍀 서진 ENG 투쟁이 궁금하다면?</a></p>
   </div>
 
   <div class="poster-subsection">
@@ -168,7 +219,7 @@
   <div class="cta">
     👉 함께하고 싶다면 지금 신청하세요!<br>
     <a href="https://docs.google.com/forms/d/13FZicrQoubkzyq3qLTS2VEn3F59Uv9pqkoYy5gdwwFc/viewform" target="_blank">신청하러 가기</a><br>
-    <a class="btn-schedule" href="https://drive.google.com/file/d/1I9CqRYx5iiGyXLy5OUvQ-_29kIEdyKS4/view?usp=sharing">📅 상세 일정 보기</a>
+    <a class="btn-schedule" href="https://drive.google.com/file/d/1I9CqRYx5iiGyXLy5OUvQ-_29kIEdyKS4/view?usp=sharing" target="_blank">📅 상세 일정 보기</a>
   </div>
 </section>
 
@@ -200,11 +251,22 @@
   </table>
 </section>
 
-<footer>
-  문의: <a href="sms:01066780470">010-6678-0470</a> /  
-  트위터 DM: <a href="https://twitter.com/mimg3094" target="_blank">@mimg3094</a><br>
-  Let's go! 평등한 세상! ✊
-</footer>   
+<!-- ✅ 우측 하단 네비게이션 -->
+<div class="floating-nav" id="floatingNav">
+  <div class="floating-options">
+    <a href="sms:01066780470" title="문자 보내기">📩</a>
+    <a href="https://twitter.com/mimg3094" target="_blank" title="트위터 DM">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" alt="트위터">
+    </a>
+  </div>
+  <div class="floating-button" onclick="toggleNav()">❓</div>
+</div>
+
+<script>
+  function toggleNav() {
+    document.getElementById('floatingNav').classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>
